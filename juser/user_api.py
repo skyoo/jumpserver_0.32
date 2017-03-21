@@ -173,10 +173,10 @@ def user_add_mail(user, kwargs):
         您的web登录密码： %s
         密钥下载地址： %s/juser/key/down/?uuid=%s
         说明： 请登陆跳板机后台下载密钥, 然后使用密钥登陆跳板机！
-	非公司网络请手动解析j.clicki.cn
+	非公司网络请手动解析j.xxx.cn
 	#vi /etc/hosts
-	101.254.167.219 j.clicki.cn
-	#ssh -i %s.pem %s@j.clicki.cn
+	8.8.8.8 j.xxx.cn
+	#ssh -i %s.pem %s@j.xxx.cn
     """ % (user.name, user.username, user_role.get(user.role, u'普通用户'),
            kwargs.get('password'), URL, user.uuid, user.name, user.name)
     send_mail(mail_title, mail_msg, MAIL_FROM, [user.email], fail_silently=False)
